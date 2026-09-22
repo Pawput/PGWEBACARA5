@@ -122,8 +122,7 @@
             // onEachFeature
             onEachFeature: function (feature, layer) {
 
-
-                // Popup content
+                // Popup Toponimi
                 var popup_content =
 
                     "Nama: " +
@@ -145,17 +144,7 @@
 
                 layer.on({
 
-                    // Click untuk popup
-                    click: function () {
-
-                        layer.bindPopup(
-                            popup_content
-                        ).openPopup();
-
-                    },
-
-
-                    // Mouseover untuk tooltip
+                    // Mouseover Toponimi
                     mouseover: function () {
 
                         layer.bindTooltip(
@@ -169,10 +158,20 @@
                     },
 
 
-                    // Mouseout
+                    // Mouseout Toponimi
                     mouseout: function () {
 
                         layer.closeTooltip();
+
+                    },
+
+
+                    // Click Toponimi
+                    click: function () {
+
+                        layer.bindPopup(
+                            popup_content
+                        ).openPopup();
 
                     }
 
@@ -236,7 +235,29 @@
 
                 layer.on({
 
-                    // Click untuk popup
+                    // Mouseover Jalan
+                    mouseover: function () {
+
+                        layer.bindTooltip(
+                            feature.properties.NAMA_UNSUR,
+                            {
+                                direction: "top",
+                                sticky: true
+                            }
+                        ).openTooltip();
+
+                    },
+
+
+                    // Mouseout Jalan
+                    mouseout: function () {
+
+                        layer.closeTooltip();
+
+                    },
+
+
+                    // Click Jalan
                     click: function () {
 
                         layer.bindPopup(
@@ -341,7 +362,7 @@
 
                 layer.on({
 
-                    // Mouseover untuk tooltip
+                    // Mouseover Kecamatan
                     mouseover: function () {
 
                         layer.bindTooltip(
@@ -355,7 +376,7 @@
                     },
 
 
-                    // Mouseout
+                    // Mouseout Kecamatan
                     mouseout: function () {
 
                         layer.closeTooltip();
@@ -363,7 +384,7 @@
                     },
 
 
-                    // Click untuk popup
+                    // Click Kecamatan
                     click: function () {
 
                         layer.openPopup();
@@ -471,7 +492,7 @@
                 "34.380 – 41.696";
 
 
-            return div;
+            return div; s
 
         };
 
